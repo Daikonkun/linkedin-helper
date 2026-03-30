@@ -45,9 +45,9 @@ class LinkedInClient:
     def heartbeat(self) -> bool:
         """Check if the API is reachable. Returns True if healthy."""
         try:
-            resp = self._session.get(
+            resp = self._session.post(
                 RAPIDAPI_URL,
-                params={"keywords": "test", "locationId": "", "datePosted": "", "sort": "mostRelevant"},
+                json={"search_terms": "test", "location": "United States", "page": "1"},
                 timeout=10,
             )
             return resp.status_code in (200, 429)  # 429 = rate-limited but reachable
@@ -72,19 +72,14 @@ class LinkedInClient:
         """
         self._rate_limit()
 
-        params: dict[str, str | int] = {
-            "keywords": keywords,
-            "locationId": location,
-            "datePosted": date_posted,
-            "sort": sort_by,
+        payload: dict[str, str] = {
+            "search_terms": keywords,
+            "location": location,
+            "page": "1",
         }
-        if experience_level:
-            params["experienceLevel"] = experience_level
-        if remote:
-            params["onsiteRemote"] = remote
 
         try:
-            resp = self._session.get(RAPIDAPI_URL, params=params, timeout=30)
+            resp = self._session.post(RAPIDAPI_URL, json=payload, timeout=30)
             resp.raise_for_status()
         except requests.RequestException as exc:
             logger.error("Failed to fetch jobs: %s", exc)
@@ -98,15 +93,15 @@ class LinkedInClient:
         jobs: list[JobPost] = []
         for item in data[:max_results]:
             try:
+                job_id = item.get("linkedin_job_url_cleaned", "") or item.get("job_url", "")
                 jobs.append(
                     JobPost(
-                        job_id=str(item.get("id", "")),
-                        title=item.get("title", "Unknown"),
-                        company=item.get("company", {}).get("name", "Unknown"),
-                        location=item.get("location", "Unknown"),
-                        url=item.get("url", ""),
-                        date_posted=item.get("postDate", ""),
-                        description_snippet=item.get("description", "")[:200],
+                        job_id=job_id,
+                        title=item.get("job_title", "Unknown"),
+                        company=item.get("company_name", item.get("normalized_company_name", "Unknown")),
+                        location=item.get("job_location", "Unknown"),
+                        url=item.get("linkedin_job_url_cleaned", item.get("job_url", "")),
+                        date_posted=item.get("posted_date", ""),
                     )
                 )
             except (AttributeError, TypeError) as exc:

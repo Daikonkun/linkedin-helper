@@ -19,18 +19,18 @@ class TestHeartbeat:
     def test_healthy(self, client):
         mock_resp = MagicMock()
         mock_resp.status_code = 200
-        client._session.get = MagicMock(return_value=mock_resp)
+        client._session.post = MagicMock(return_value=mock_resp)
         assert client.heartbeat() is True
 
     def test_rate_limited_still_healthy(self, client):
         mock_resp = MagicMock()
         mock_resp.status_code = 429
-        client._session.get = MagicMock(return_value=mock_resp)
+        client._session.post = MagicMock(return_value=mock_resp)
         assert client.heartbeat() is True
 
     def test_unreachable(self, client):
         from requests.exceptions import ConnectionError
-        client._session.get = MagicMock(side_effect=ConnectionError("down"))
+        client._session.post = MagicMock(side_effect=ConnectionError("down"))
         assert client.heartbeat() is False
 
 
@@ -41,25 +41,25 @@ class TestFetchJobs:
         mock_resp.raise_for_status = MagicMock()
         mock_resp.json.return_value = [
             {
-                "id": "111",
-                "title": "Backend Dev",
-                "company": {"name": "Acme"},
-                "location": "Remote",
-                "url": "https://linkedin.com/jobs/111",
-                "postDate": "1 day ago",
-                "description": "Build cool stuff",
+                "job_url": "https://linkedin.com/jobs/view/111",
+                "linkedin_job_url_cleaned": "https://linkedin.com/jobs/view/111",
+                "company_name": "Acme",
+                "job_title": "Backend Dev",
+                "job_location": "Remote",
+                "posted_date": "2026-03-30",
+                "normalized_company_name": "Acme",
             }
         ]
-        client._session.get = MagicMock(return_value=mock_resp)
+        client._session.post = MagicMock(return_value=mock_resp)
 
         jobs = client.fetch_jobs(keywords="python")
         assert len(jobs) == 1
-        assert jobs[0].job_id == "111"
+        assert jobs[0].title == "Backend Dev"
         assert jobs[0].company == "Acme"
 
     def test_error_returns_empty(self, client):
         from requests.exceptions import ConnectionError
-        client._session.get = MagicMock(side_effect=ConnectionError("fail"))
+        client._session.post = MagicMock(side_effect=ConnectionError("fail"))
         jobs = client.fetch_jobs(keywords="python")
         assert jobs == []
 
@@ -68,10 +68,10 @@ class TestFetchJobs:
         mock_resp.status_code = 200
         mock_resp.raise_for_status = MagicMock()
         mock_resp.json.return_value = [
-            {"id": str(i), "title": f"Job {i}", "company": {"name": "Co"}, "location": "NY", "url": f"https://x/{i}"}
+            {"linkedin_job_url_cleaned": f"https://x/{i}", "job_title": f"Job {i}", "company_name": "Co", "job_location": "NY"}
             for i in range(10)
         ]
-        client._session.get = MagicMock(return_value=mock_resp)
+        client._session.post = MagicMock(return_value=mock_resp)
 
         jobs = client.fetch_jobs(keywords="test", max_results=3)
         assert len(jobs) == 3
