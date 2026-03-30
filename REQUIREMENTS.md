@@ -24,12 +24,12 @@ Auto-generated summary of all product requirements. For detailed specs, see indi
 | REQ-1774775901 | add /work-on command | MERGED | MEDIUM | feature/REQ-1774775901-add-work-on-command | 2026-03-29 | 2026-03-29 |
 | REQ-1774885033 | LinkedIn | CODE_REVIEW | MEDIUM | feature/REQ-1774885033-linkedin | 2026-03-30 | 2026-03-30 |
 | REQ-1774885472 | Fix Telegram Markdown escape mismatch | MERGED | HIGH | feature/REQ-1774885472-fix-telegram-markdown-escape-mismatch | 2026-03-30 | 2026-03-30 |
-| REQ-1774885477 | Fix agent double-close and add poll error boundary | PROPOSED | MEDIUM | — | 2026-03-30 | 2026-03-30 |
+| REQ-1774885477 | Fix agent double-close and add poll error boundary | IN_PROGRESS | MEDIUM | — | 2026-03-30 | 2026-03-30 |
 | REQ-1774885483 | Add tests and usage README for LinkedIn agent | CANCELLED | LOW | — | 2026-03-30 | 2026-03-30 |
 
 ## Status Breakdown
-- **Proposed**: 1
-- **In Progress**: 0
+- **Proposed**: 0
+- **In Progress**: 1
 - **Code Review**: 1
 - **Merged**: 14
 - **Deployed**: 2
@@ -42,6 +42,6 @@ Use `/add-requirement "Feature name" "Description"` to submit requirements.
 
 ---
 
-* Last updated: 2026-03-30T15:51:12Z
+* Last updated: 2026-03-30T15:51:17Z
 * Structured data: See `.requirement-manifest.json`
 * Worktree mapping: See `.worktree-manifest.json`
