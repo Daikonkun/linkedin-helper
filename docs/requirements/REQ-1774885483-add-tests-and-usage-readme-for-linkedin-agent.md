@@ -1,7 +1,7 @@
 # Add tests and usage README for LinkedIn agent
 
 **ID**: REQ-1774885483  
-**Status**: PROPOSED  
+**Status**: CANCELLED  
 **Priority**: LOW  
 **Created**: 2026-03-30T15:44:43Z  
 

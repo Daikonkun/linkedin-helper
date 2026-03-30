@@ -2,8 +2,12 @@
 
 Kanban-style view of all requirements and their current state.
 
-## PROPOSED (0)
+## PROPOSED (2)
 
+* REQ-1774885472: Fix Telegram Markdown escape mismatch (priority: HIGH)
+  - Worktree: none
+* REQ-1774885477: Fix agent double-close and add poll error boundary (priority: MEDIUM)
+  - Worktree: none
 
 ## IN_PROGRESS (0)
 
@@ -55,7 +59,7 @@ Kanban-style view of all requirements and their current state.
 ## BACKLOG (0)
 
 
-## CANCELLED (3)
+## CANCELLED (4)
 
 * REQ-1774774129: Review follow-up: fix manifest inconsistencies and ghost command (priority: MEDIUM)
   - Worktree: none
@@ -63,9 +67,11 @@ Kanban-style view of all requirements and their current state.
   - Worktree: none
 * REQ-1774774145: Review follow-up: fix manifest inconsistencies and ghost command (priority: MEDIUM)
   - Worktree: none
+* REQ-1774885483: Add tests and usage README for LinkedIn agent (priority: LOW)
+  - Worktree: none
 
 ## Stats
-- Total Requirements: 19
-- Deployed: 2 (10%)
+- Total Requirements: 22
+- Deployed: 2 (9%)
 - In Progress: 0
 - Blocked: 0

@@ -40,3 +40,9 @@ REQ-1774775901: add /work-on command (no dependencies)
 
 REQ-1774885033: LinkedIn (no dependencies)
 
+REQ-1774885472: Fix Telegram Markdown escape mismatch (no dependencies)
+
+REQ-1774885477: Fix agent double-close and add poll error boundary (no dependencies)
+
+REQ-1774885483: Add tests and usage README for LinkedIn agent (no dependencies)
+
