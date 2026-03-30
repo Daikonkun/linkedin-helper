@@ -19,8 +19,19 @@ class TestEscapeMd:
     def test_escapes_asterisks(self):
         assert TelegramNotifier._escape_md("*bold*") == r"\*bold\*"
 
+    def test_escapes_backticks(self):
+        assert TelegramNotifier._escape_md("`code`") == r"\`code\`"
+
+    def test_escapes_brackets(self):
+        assert TelegramNotifier._escape_md("[link") == r"\[link"
+
     def test_plain_text_unchanged(self):
         assert TelegramNotifier._escape_md("plain text") == "plain text"
+
+    def test_does_not_escape_v2_only_chars(self):
+        """Chars like . - ! > # should NOT be escaped in Markdown v1."""
+        text = "Senior .NET Dev - Remote! #hiring"
+        assert TelegramNotifier._escape_md(text) == text
 
 
 class TestSendJobAlert:

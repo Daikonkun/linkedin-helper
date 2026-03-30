@@ -67,7 +67,12 @@ class TelegramNotifier:
 
     @staticmethod
     def _escape_md(text: str) -> str:
-        """Escape Markdown v1 special characters."""
-        for ch in ("_", "*", "[", "]", "(", ")", "~", "`", ">", "#", "+", "-", "=", "|", "{", "}", ".", "!"):
+        """Escape Markdown v1 special characters.
+
+        Telegram Markdown v1 only treats _ * ` [ as formatting triggers.
+        Do NOT escape MarkdownV2-only chars (. ! - etc.) — they would
+        appear as literal backslashes in the message.
+        """
+        for ch in ("_", "*", "`", "["):
             text = text.replace(ch, f"\\{ch}")
         return text
