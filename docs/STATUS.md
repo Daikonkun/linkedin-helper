@@ -7,15 +7,15 @@ Kanban-style view of all requirements and their current state.
 * REQ-1774885477: Fix agent double-close and add poll error boundary (priority: MEDIUM)
   - Worktree: none
 
-## IN_PROGRESS (1)
+## IN_PROGRESS (0)
 
-* REQ-1774885472: Fix Telegram Markdown escape mismatch (priority: HIGH)
-  - Worktree: feature/REQ-1774885472-fix-telegram-markdown-escape-mismatch
 
-## CODE_REVIEW (1)
+## CODE_REVIEW (2)
 
 * REQ-1774885033: LinkedIn (priority: MEDIUM)
   - Worktree: feature/REQ-1774885033-linkedin
+* REQ-1774885472: Fix Telegram Markdown escape mismatch (priority: HIGH)
+  - Worktree: feature/REQ-1774885472-fix-telegram-markdown-escape-mismatch
 
 ## MERGED (13)
 
@@ -73,5 +73,5 @@ Kanban-style view of all requirements and their current state.
 ## Stats
 - Total Requirements: 22
 - Deployed: 2 (9%)
-- In Progress: 1
+- In Progress: 0
 - Blocked: 0

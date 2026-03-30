@@ -1,7 +1,7 @@
 # Fix Telegram Markdown escape mismatch
 
 **ID**: REQ-1774885472  
-**Status**: IN_PROGRESS  
+**Status**: CODE_REVIEW  
 **Priority**: HIGH  
 **Created**: 2026-03-30T15:44:32Z  
 
