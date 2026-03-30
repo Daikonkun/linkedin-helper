@@ -2,15 +2,15 @@
 
 Kanban-style view of all requirements and their current state.
 
-## PROPOSED (2)
+## PROPOSED (1)
 
-* REQ-1774885472: Fix Telegram Markdown escape mismatch (priority: HIGH)
-  - Worktree: none
 * REQ-1774885477: Fix agent double-close and add poll error boundary (priority: MEDIUM)
   - Worktree: none
 
-## IN_PROGRESS (0)
+## IN_PROGRESS (1)
 
+* REQ-1774885472: Fix Telegram Markdown escape mismatch (priority: HIGH)
+  - Worktree: feature/REQ-1774885472-fix-telegram-markdown-escape-mismatch
 
 ## CODE_REVIEW (1)
 
@@ -73,5 +73,5 @@ Kanban-style view of all requirements and their current state.
 ## Stats
 - Total Requirements: 22
 - Deployed: 2 (9%)
-- In Progress: 0
+- In Progress: 1
 - Blocked: 0
