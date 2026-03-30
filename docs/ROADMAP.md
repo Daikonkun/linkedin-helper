@@ -25,7 +25,7 @@ Timeline view of all requirements organized by status and priority.
 * [MERGED] REQ-1774774148: Review follow-up: fix manifest inconsistencies and ghost command
 * [MERGED] REQ-1774775901: add /work-on command
 * [CODE_REVIEW] REQ-1774885033: LinkedIn
-* [CODE_REVIEW] REQ-1774885477: Fix agent double-close and add poll error boundary
+* [MERGED] REQ-1774885477: Fix agent double-close and add poll error boundary
 
 ## Low Priority
 * [MERGED] REQ-1774632175: Review follow-up: polish upgrade guide in README
