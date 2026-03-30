@@ -202,6 +202,15 @@
       "priority": "HIGH",
       "createdAt": "2026-03-30T15:44:32Z",
       "updatedAt": "2026-03-30T15:44:32Z"
+    },
+    {
+      "id": "REQ-1774885477",
+      "name": "Fix agent double-close and add poll error boundary",
+      "description": "Source: code-review of REQ-1774885033. Severity: MEDIUM. Evidence: (1) agent.py _shutdown() and finally block both call client.close()/store.close(), causing ProgrammingError on SQLite double-close. (2) poll_jobs() has no top-level try/except so a transient DB error kills the scheduler job. Required outcome: guard against double-close and wrap poll_jobs body in error boundary that logs and continues.",
+      "status": "PROPOSED",
+      "priority": "MEDIUM",
+      "createdAt": "2026-03-30T15:44:37Z",
+      "updatedAt": "2026-03-30T15:44:37Z"
     }
   ]
 }
