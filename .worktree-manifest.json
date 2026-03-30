@@ -167,7 +167,8 @@
         "REQ-1774885033"
       ],
       "createdAt": "2026-03-30T15:39:02Z",
-      "status": "ACTIVE"
+      "status": "MERGED",
+      "mergedAt": "2026-03-30T15:54:09Z"
     },
     {
       "id": "feature/REQ-1774885472-fix-telegram-markdown-escape-mismatch",

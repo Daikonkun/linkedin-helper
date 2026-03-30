@@ -24,7 +24,7 @@ Timeline view of all requirements organized by status and priority.
 * [CANCELLED] REQ-1774774145: Review follow-up: fix manifest inconsistencies and ghost command
 * [MERGED] REQ-1774774148: Review follow-up: fix manifest inconsistencies and ghost command
 * [MERGED] REQ-1774775901: add /work-on command
-* [CODE_REVIEW] REQ-1774885033: LinkedIn
+* [MERGED] REQ-1774885033: LinkedIn
 * [MERGED] REQ-1774885477: Fix agent double-close and add poll error boundary
 
 ## Low Priority
