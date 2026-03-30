@@ -187,10 +187,10 @@
       "id": "REQ-1774885033",
       "name": "LinkedIn",
       "description": "build an agent that can connect LinkedIn via API which has heartbeat and check if there is new job post that fits me every hour, and push notifications to Telegram",
-      "status": "IN_PROGRESS",
+      "status": "CODE_REVIEW",
       "priority": "MEDIUM",
       "createdAt": "2026-03-30T15:37:13Z",
-      "updatedAt": "2026-03-30T15:39:02Z",
+      "updatedAt": "2026-03-30T15:43:23Z",
       "notes": "Long-running agent: LinkedIn job polling via API + Telegram Bot notifications with deduplication and heartbeat",
       "worktreeId": "feature/REQ-1774885033-linkedin"
     }

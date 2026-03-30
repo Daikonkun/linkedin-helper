@@ -22,12 +22,12 @@ Auto-generated summary of all product requirements. For detailed specs, see indi
 | REQ-1774774145 | Review follow-up: fix manifest inconsistencies and ghost command | CANCELLED | MEDIUM | — | 2026-03-29 | 2026-03-29 |
 | REQ-1774774148 | Review follow-up: fix manifest inconsistencies and ghost command | MERGED | MEDIUM | feature/REQ-1774774148-review-follow-up-fix-manifest-inconsistencies-and-ghost-command | 2026-03-29 | 2026-03-29 |
 | REQ-1774775901 | add /work-on command | MERGED | MEDIUM | feature/REQ-1774775901-add-work-on-command | 2026-03-29 | 2026-03-29 |
-| REQ-1774885033 | LinkedIn | IN_PROGRESS | MEDIUM | feature/REQ-1774885033-linkedin | 2026-03-30 | 2026-03-30 |
+| REQ-1774885033 | LinkedIn | CODE_REVIEW | MEDIUM | feature/REQ-1774885033-linkedin | 2026-03-30 | 2026-03-30 |
 
 ## Status Breakdown
 - **Proposed**: 0
-- **In Progress**: 1
-- **Code Review**: 0
+- **In Progress**: 0
+- **Code Review**: 1
 - **Merged**: 13
 - **Deployed**: 2
 - **Blocked**: 0
@@ -39,6 +39,6 @@ Use `/add-requirement "Feature name" "Description"` to submit requirements.
 
 ---
 
-* Last updated: 2026-03-30T15:39:03Z
+* Last updated: 2026-03-30T15:43:23Z
 * Structured data: See `.requirement-manifest.json`
 * Worktree mapping: See `.worktree-manifest.json`
