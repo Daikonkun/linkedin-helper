@@ -86,38 +86,46 @@ def poll_jobs(
     notifier: TelegramNotifier,
     cfg: dict,
 ) -> None:
-    """Single poll cycle: fetch → deduplicate → notify."""
-    linkedin_cfg = cfg["linkedin"]
-    agent_cfg = cfg["agent"]
+    """Single poll cycle: fetch → deduplicate → notify.
 
-    logger.info("Polling LinkedIn for jobs (keywords=%r) …", linkedin_cfg["keywords"])
+    Wrapped in a top-level error boundary so a transient failure
+    (e.g. SQLite lock, unexpected API response) does not kill the
+    scheduler job — it will simply retry on the next cycle.
+    """
+    try:
+        linkedin_cfg = cfg["linkedin"]
+        agent_cfg = cfg["agent"]
 
-    jobs = client.fetch_jobs(
-        keywords=linkedin_cfg["keywords"],
-        location=linkedin_cfg["location"],
-        date_posted=linkedin_cfg["date_posted"],
-        experience_level=linkedin_cfg["experience_level"],
-        remote=linkedin_cfg["remote"],
-        sort_by=linkedin_cfg["sort_by"],
-        max_results=agent_cfg["max_results_per_poll"],
-    )
+        logger.info("Polling LinkedIn for jobs (keywords=%r) …", linkedin_cfg["keywords"])
 
-    new_jobs = [j for j in jobs if not store.is_seen(j.job_id)]
-    logger.info("Found %d new jobs out of %d fetched", len(new_jobs), len(jobs))
-
-    for job in new_jobs:
-        sent = notifier.send_job_alert(
-            title=job.title,
-            company=job.company,
-            location=job.location,
-            url=job.url,
-            date_posted=job.date_posted,
+        jobs = client.fetch_jobs(
+            keywords=linkedin_cfg["keywords"],
+            location=linkedin_cfg["location"],
+            date_posted=linkedin_cfg["date_posted"],
+            experience_level=linkedin_cfg["experience_level"],
+            remote=linkedin_cfg["remote"],
+            sort_by=linkedin_cfg["sort_by"],
+            max_results=agent_cfg["max_results_per_poll"],
         )
-        if sent:
-            store.mark_seen(job.job_id)
-            logger.info("Notified: %s at %s", job.title, job.company)
-        else:
-            logger.warning("Failed to notify for job %s — will retry next cycle", job.job_id)
+
+        new_jobs = [j for j in jobs if not store.is_seen(j.job_id)]
+        logger.info("Found %d new jobs out of %d fetched", len(new_jobs), len(jobs))
+
+        for job in new_jobs:
+            sent = notifier.send_job_alert(
+                title=job.title,
+                company=job.company,
+                location=job.location,
+                url=job.url,
+                date_posted=job.date_posted,
+            )
+            if sent:
+                store.mark_seen(job.job_id)
+                logger.info("Notified: %s at %s", job.title, job.company)
+            else:
+                logger.warning("Failed to notify for job %s — will retry next cycle", job.job_id)
+    except Exception:
+        logger.exception("Poll cycle failed — will retry next cycle")
 
 
 def heartbeat_tick(client: LinkedInClient) -> None:
@@ -170,13 +178,23 @@ def main() -> None:
         name=f"Heartbeat every {heartbeat_minutes}m",
     )
 
+    # Shutdown guard — prevents double-close on signal + finally
+    _shutting_down = False
+
+    def _cleanup() -> None:
+        nonlocal _shutting_down
+        if _shutting_down:
+            return
+        _shutting_down = True
+        client.close()
+        store.close()
+
     # Graceful shutdown
     def _shutdown(signum: int, _frame: object) -> None:
         sig_name = signal.Signals(signum).name
         logger.info("Received %s — shutting down gracefully …", sig_name)
         scheduler.shutdown(wait=False)
-        client.close()
-        store.close()
+        _cleanup()
 
     signal.signal(signal.SIGINT, _shutdown)
     signal.signal(signal.SIGTERM, _shutdown)
@@ -194,8 +212,7 @@ def main() -> None:
     except (KeyboardInterrupt, SystemExit):
         logger.info("Agent stopped.")
     finally:
-        client.close()
-        store.close()
+        _cleanup()
 
 
 if __name__ == "__main__":
