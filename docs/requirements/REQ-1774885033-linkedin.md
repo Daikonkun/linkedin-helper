@@ -1,7 +1,7 @@
 # LinkedIn
 
 **ID**: REQ-1774885033  
-**Status**: PROPOSED  
+**Status**: IN_PROGRESS  
 **Priority**: MEDIUM  
 **Created**: 2026-03-30T15:37:13Z  
 
@@ -25,6 +25,20 @@ build an agent that can connect LinkedIn via API which has heartbeat and check i
 - **State Persistence**: Track seen job post IDs in a lightweight store (SQLite or JSON file) to enable deduplication across restarts.
 - **Configuration**: Store user preferences (search keywords, location, polling interval) in a config file (e.g., `config.yaml` or `.env`).
 - **Risks**: LinkedIn may block or rate-limit API/scraping access; Telegram rate limits (30 messages/sec) are unlikely to be hit but should be handled. API key leakage must be prevented (use `.env` + `.gitignore`).
+
+
+## Development Plan
+
+1. Review Description, Success Criteria, and Technical Notes in `docs/requirements/REQ-1774885033-linkedin.md`.
+   - **Summary**: build an agent that can connect LinkedIn via API which has heartbeat and check i
+   - **Key criteria**: - [ ] Agent authenticates with LinkedIn API and maintains a persistent session (heartbeat/keep-alive
+2. Analyse Technical Notes and identify implementation approach.
+   - **Notes**: - **LinkedIn Data Access**: LinkedIn's official API is restrictive for job scraping. Evaluate option
+3. Implement changes in the files/scripts referenced by the requirement spec.
+4. Run `./scripts/regenerate-docs.sh` to update manifests and generated docs.
+5. Validate with `./scripts/show-requirement.sh REQ-1774885033` and verify success criteria are met.
+
+**Last updated**: 2026-03-30T15:39:03Z
 
 ## Dependencies
 
