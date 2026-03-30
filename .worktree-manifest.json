@@ -1,0 +1,162 @@
+{
+  "$schema": ".worktree-manifest.schema.json",
+  "version": "1.0",
+  "worktrees": [
+    {
+      "id": "feature/REQ-1774628144-review-follow-up-align-slash-commands-with-actual-skill-invocations",
+      "path": "/Users/bluoaa/Desktop/Work/Vibe Coding Stuff/feature/REQ-1774628144-review-follow-up-align-slash-commands-with-actual-skill-invocations",
+      "branch": "feature/REQ-1774628144-review-follow-up-align-slash-commands-with-actual-skill-invocations",
+      "baseBranch": "main",
+      "requirementIds": [
+        "REQ-1774628144"
+      ],
+      "createdAt": "2026-03-27T16:18:00Z",
+      "mergedAt": "2026-03-28T00:10:00Z",
+      "status": "MERGED"
+    },
+    {
+      "id": "feature/REQ-1774630000-update-readme-for-vibe-master-upgrade-migration",
+      "path": "/Users/bluoaa/Desktop/Work/Vibe Coding Stuff/feature/REQ-1774630000-update-readme-for-vibe-master-upgrade-migration",
+      "branch": "feature/REQ-1774630000-update-readme-for-vibe-master-upgrade-migration",
+      "baseBranch": "main",
+      "requirementIds": [
+        "REQ-1774630000"
+      ],
+      "createdAt": "2026-03-27T16:35:41Z",
+      "status": "MERGED",
+      "mergedAt": "2026-03-27T17:24:03Z"
+    },
+    {
+      "id": "feature/REQ-1774632175-review-follow-up-polish-upgrade-guide-in-readme",
+      "path": "/Users/bluoaa/Desktop/Work/Vibe Coding Stuff/feature/REQ-1774632175-review-follow-up-polish-upgrade-guide-in-readme",
+      "branch": "feature/REQ-1774632175-review-follow-up-polish-upgrade-guide-in-readme",
+      "baseBranch": "main",
+      "requirementIds": [
+        "REQ-1774632175"
+      ],
+      "createdAt": "2026-03-27T17:24:30Z",
+      "status": "MERGED",
+      "mergedAt": "2026-03-27T17:27:01Z"
+    },
+    {
+      "id": "feature/REQ-1774636689-auto-create-req-from-bug-fix-when-new-feature-needed",
+      "path": "/Users/bluoaa/Desktop/Work/Vibe Coding Stuff/feature/REQ-1774636689-auto-create-req-from-bug-fix-when-new-feature-needed",
+      "branch": "feature/REQ-1774636689-auto-create-req-from-bug-fix-when-new-feature-needed",
+      "baseBranch": "main",
+      "requirementIds": [
+        "REQ-1774636689"
+      ],
+      "createdAt": "2026-03-27T18:39:13Z",
+      "status": "MERGED",
+      "mergedAt": "2026-03-27T18:46:27Z"
+    },
+    {
+      "id": "feature/REQ-1774639240-add-requirement-populate-spec-sections-after-creation",
+      "path": "/Users/bluoaa/Desktop/Work/Vibe Coding Stuff/feature/REQ-1774639240-add-requirement-populate-spec-sections-after-creation",
+      "branch": "feature/REQ-1774639240-add-requirement-populate-spec-sections-after-creation",
+      "baseBranch": "main",
+      "requirementIds": [
+        "REQ-1774639240"
+      ],
+      "createdAt": "2026-03-27T19:24:58Z",
+      "status": "MERGED",
+      "mergedAt": "2026-03-28T00:00:00Z"
+    },
+    {
+      "id": "feature/REQ-1774681642-execution-standard-on-working-with-a-requirement",
+      "path": "/Users/bluoaa/Desktop/Work/Vibe Coding Stuff/feature/REQ-1774681642-execution-standard-on-working-with-a-requirement",
+      "branch": "feature/REQ-1774681642-execution-standard-on-working-with-a-requirement",
+      "baseBranch": "main",
+      "requirementIds": [
+        "REQ-1774681642"
+      ],
+      "createdAt": "2026-03-28T07:08:44Z",
+      "status": "MERGED",
+      "mergedAt": "2026-03-28T07:29:47Z"
+    },
+    {
+      "id": "feature/REQ-1774685792-upgrade-functions-referring-to-obra-s-superpower-agent",
+      "path": "/Users/bluoaa/Desktop/Work/Vibe Coding Stuff/feature/REQ-1774685792-upgrade-functions-referring-to-obra-s-superpower-agent",
+      "branch": "feature/REQ-1774685792-upgrade-functions-referring-to-obra-s-superpower-agent",
+      "baseBranch": "main",
+      "requirementIds": [
+        "REQ-1774685792"
+      ],
+      "createdAt": "2026-03-28T08:17:59Z",
+      "status": "MERGED",
+      "mergedAt": "2026-03-28T08:47:37Z"
+    },
+    {
+      "id": "feature/REQ-1774770291-review-follow-up-fix-generate-plan-sh-triple-bug",
+      "path": "/Users/bluoaa/Desktop/Work/Vibe Coding Stuff/feature/REQ-1774770291-review-follow-up-fix-generate-plan-sh-triple-bug",
+      "branch": "feature/REQ-1774770291-review-follow-up-fix-generate-plan-sh-triple-bug",
+      "baseBranch": "main",
+      "requirementIds": [
+        "REQ-1774770291"
+      ],
+      "createdAt": "2026-03-29T07:47:35Z",
+      "status": "MERGED",
+      "mergedAt": "2026-03-29T07:55:15Z"
+    },
+    {
+      "id": "feature/REQ-1774770314-review-follow-up-fix-skill-md-jq-injection-examples-and-stale-status-values",
+      "path": "/Users/bluoaa/Desktop/Work/Vibe Coding Stuff/feature/REQ-1774770314-review-follow-up-fix-skill-md-jq-injection-examples-and-stale-status-values",
+      "branch": "feature/REQ-1774770314-review-follow-up-fix-skill-md-jq-injection-examples-and-stale-status-values",
+      "baseBranch": "main",
+      "requirementIds": [
+        "REQ-1774770314"
+      ],
+      "createdAt": "2026-03-29T08:11:12Z",
+      "status": "MERGED",
+      "mergedAt": "2026-03-29T08:39:38Z"
+    },
+    {
+      "id": "feature/REQ-1774770322-review-follow-up-unify-slug-generation-and-fix-init-project-gaps",
+      "path": "/Users/bluoaa/Desktop/Work/Vibe Coding Stuff/feature/REQ-1774770322-review-follow-up-unify-slug-generation-and-fix-init-project-gaps",
+      "branch": "feature/REQ-1774770322-review-follow-up-unify-slug-generation-and-fix-init-project-gaps",
+      "baseBranch": "main",
+      "requirementIds": [
+        "REQ-1774770322"
+      ],
+      "createdAt": "2026-03-29T08:18:36Z",
+      "status": "MERGED",
+      "mergedAt": "2026-03-29T08:29:07Z"
+    },
+    {
+      "id": "feature/REQ-1774772256-review-follow-up-replace-reverted-with-cancelled-in-orchestrator-agent-mode",
+      "path": "/Users/bluoaa/Desktop/Work/Vibe Coding Stuff/feature/REQ-1774772256-review-follow-up-replace-reverted-with-cancelled-in-orchestrator-agent-mode",
+      "branch": "feature/REQ-1774772256-review-follow-up-replace-reverted-with-cancelled-in-orchestrator-agent-mode",
+      "baseBranch": "main",
+      "requirementIds": [
+        "REQ-1774772256"
+      ],
+      "createdAt": "2026-03-29T08:41:12Z",
+      "status": "MERGED",
+      "mergedAt": "2026-03-29T08:45:00Z"
+    },
+    {
+      "id": "feature/REQ-1774774148-review-follow-up-fix-manifest-inconsistencies-and-ghost-command",
+      "path": "/Users/bluoaa/Desktop/Work/Vibe Coding Stuff/feature/REQ-1774774148-review-follow-up-fix-manifest-inconsistencies-and-ghost-command",
+      "branch": "feature/REQ-1774774148-review-follow-up-fix-manifest-inconsistencies-and-ghost-command",
+      "baseBranch": "main",
+      "requirementIds": [
+        "REQ-1774774148"
+      ],
+      "createdAt": "2026-03-29T09:09:19Z",
+      "status": "MERGED",
+      "mergedAt": "2026-03-29T09:16:52Z"
+    },
+    {
+      "id": "feature/REQ-1774775901-add-work-on-command",
+      "path": "/Users/bluoaa/Desktop/Work/Vibe Coding Stuff/feature/REQ-1774775901-add-work-on-command",
+      "branch": "feature/REQ-1774775901-add-work-on-command",
+      "baseBranch": "main",
+      "requirementIds": [
+        "REQ-1774775901"
+      ],
+      "createdAt": "2026-03-29T09:22:23Z",
+      "status": "MERGED",
+      "mergedAt": "2026-03-29T09:31:01Z"
+    }
+  ]
+}
