@@ -211,6 +211,15 @@
       "priority": "MEDIUM",
       "createdAt": "2026-03-30T15:44:37Z",
       "updatedAt": "2026-03-30T15:44:37Z"
+    },
+    {
+      "id": "REQ-1774885483",
+      "name": "Add tests and usage README for LinkedIn agent",
+      "description": "Source: code-review of REQ-1774885033. Severity: LOW. Evidence: no tests/ directory and no agent-specific usage documentation. Root README.md is the vibe-master template. Required outcome: add pytest test scaffolding for linkedin_client, job_store, telegram_notifier; add a usage README with setup, config, and run instructions.",
+      "status": "PROPOSED",
+      "priority": "LOW",
+      "createdAt": "2026-03-30T15:44:43Z",
+      "updatedAt": "2026-03-30T15:44:43Z"
     }
   ]
 }
