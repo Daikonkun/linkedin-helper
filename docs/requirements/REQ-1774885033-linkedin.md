@@ -29,14 +29,11 @@ build an agent that can connect LinkedIn via API which has heartbeat and check i
 
 ## Development Plan
 
-1. Review Description, Success Criteria, and Technical Notes in `docs/requirements/REQ-1774885033-linkedin.md`.
-   - **Summary**: build an agent that can connect LinkedIn via API which has heartbeat and check i
-   - **Key criteria**: - [ ] Agent authenticates with LinkedIn API and maintains a persistent session (heartbeat/keep-alive
-2. Analyse Technical Notes and identify implementation approach.
-   - **Notes**: - **LinkedIn Data Access**: LinkedIn's official API is restrictive for job scraping. Evaluate option
-3. Implement changes in the files/scripts referenced by the requirement spec.
-4. Run `./scripts/regenerate-docs.sh` to update manifests and generated docs.
-5. Validate with `./scripts/show-requirement.sh REQ-1774885033` and verify success criteria are met.
+1. **Project scaffolding & configuration** — Initialize Python project structure (`src/`, `config.yaml.example`, `.env.example`, `requirements.txt`). Set up `.gitignore` for `.env`, `__pycache__`, and `*.db`. Define config schema for LinkedIn search criteria, polling interval, and Telegram credentials.
+2. **LinkedIn job fetcher module** — Implement `src/linkedin_client.py` with API/aggregator integration (evaluate RapidAPI LinkedIn Jobs or similar). Include authentication, heartbeat keep-alive, rate-limit handling, and a `fetch_new_jobs(keywords, location)` function that returns structured job data.
+3. **Deduplication & state persistence** — Implement `src/job_store.py` using SQLite to track seen job post IDs. Provide `is_seen(job_id)` and `mark_seen(job_id)` methods. Ensure persistence across agent restarts.
+4. **Telegram notifier module** — Implement `src/telegram_notifier.py` using the Telegram Bot API (`/sendMessage`). Format messages with job title, company, location, and direct link. Read `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` from environment variables.
+5. **Agent runner with scheduler** — Implement `src/agent.py` as the main entry point. Use `APScheduler` for hourly polling. Wire together LinkedIn fetcher → deduplication → Telegram notifier. Add structured logging, graceful shutdown (SIGINT/SIGTERM), and heartbeat logging.
 
 **Last updated**: 2026-03-30T15:39:03Z
 
@@ -46,11 +43,11 @@ None
 
 ## Worktree
 
-(Will be populated when work starts: feature/REQ-ID-slug)
+feature/REQ-1774885033-linkedin
 
 ---
 
-* **Linked Worktree**: None yet
-* **Branch**: None yet
+* **Linked Worktree**: feature/REQ-1774885033-linkedin
+* **Branch**: feature/REQ-1774885033-linkedin
 * **Merged**: No
 * **Deployed**: No
