@@ -1,0 +1,20 @@
+# LinkedIn Job Agent Configuration
+
+linkedin:
+  # Search criteria
+  keywords: "software engineer"
+  location: "United States"
+  experience_level: ""       # e.g. "entry_level", "mid_senior_level", "director"
+  date_posted: "past24Hours" # "anyTime", "pastMonth", "pastWeek", "past24Hours"
+  remote: ""                 # "on_site", "remote", "hybrid"
+  sort_by: "mostRecent"      # "mostRecent" or "mostRelevant"
+
+agent:
+  polling_interval_minutes: 60  # How often to check for new jobs
+  heartbeat_interval_minutes: 5 # How often to log heartbeat
+  max_results_per_poll: 25      # Max jobs to fetch per poll cycle
+  db_path: "jobs.db"            # SQLite database for deduplication
+
+telegram:
+  message_format: "markdown"    # "markdown" or "html"
+  # Credentials come from .env (TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID)
