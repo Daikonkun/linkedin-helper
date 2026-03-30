@@ -182,6 +182,15 @@
       "updatedAt": "2026-03-29T09:31:01Z",
       "notes": "Add /work-on prompt file that loads a REQ spec, validates worktree, drives iterative implementation, and auto-advances status on completion.",
       "worktreeId": "feature/REQ-1774775901-add-work-on-command"
+    },
+    {
+      "id": "REQ-1774885033",
+      "name": "LinkedIn",
+      "description": "build an agent that can connect LinkedIn via API which has heartbeat and check if there is new job post that fits me every hour, and push notifications to Telegram",
+      "status": "PROPOSED",
+      "priority": "MEDIUM",
+      "createdAt": "2026-03-30T15:37:13Z",
+      "updatedAt": "2026-03-30T15:37:13Z"
     }
   ]
 }
