@@ -193,6 +193,15 @@
       "updatedAt": "2026-03-30T15:43:23Z",
       "notes": "Long-running agent: LinkedIn job polling via API + Telegram Bot notifications with deduplication and heartbeat",
       "worktreeId": "feature/REQ-1774885033-linkedin"
+    },
+    {
+      "id": "REQ-1774885472",
+      "name": "Fix Telegram Markdown escape mismatch",
+      "description": "Source: code-review of REQ-1774885033. Severity: HIGH. Evidence: telegram_notifier.py _escape_md() escapes MarkdownV2 characters but send_job_alert uses parse_mode=Markdown (v1). Messages with common chars like . - ! show literal backslashes. Required outcome: align escape logic with the parse_mode — either switch to MarkdownV2 and escape the full set, or reduce _escape_md to only v1 special chars (_*`[).",
+      "status": "PROPOSED",
+      "priority": "HIGH",
+      "createdAt": "2026-03-30T15:44:32Z",
+      "updatedAt": "2026-03-30T15:44:32Z"
     }
   ]
 }
