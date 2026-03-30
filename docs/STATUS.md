@@ -2,8 +2,10 @@
 
 Kanban-style view of all requirements and their current state.
 
-## PROPOSED (0)
+## PROPOSED (1)
 
+* REQ-1774885033: LinkedIn (priority: MEDIUM)
+  - Worktree: none
 
 ## IN_PROGRESS (0)
 
@@ -63,7 +65,7 @@ Kanban-style view of all requirements and their current state.
   - Worktree: none
 
 ## Stats
-- Total Requirements: 18
-- Deployed: 2 (11%)
+- Total Requirements: 19
+- Deployed: 2 (10%)
 - In Progress: 0
 - Blocked: 0

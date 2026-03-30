@@ -190,7 +190,8 @@
       "status": "PROPOSED",
       "priority": "MEDIUM",
       "createdAt": "2026-03-30T15:37:13Z",
-      "updatedAt": "2026-03-30T15:37:13Z"
+      "updatedAt": "2026-03-30T15:37:13Z",
+      "notes": "Long-running agent: LinkedIn job polling via API + Telegram Bot notifications with deduplication and heartbeat"
     }
   ]
 }
