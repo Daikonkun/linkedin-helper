@@ -1,7 +1,7 @@
 # Fix agent double-close and add poll error boundary
 
 **ID**: REQ-1774885477  
-**Status**: IN_PROGRESS  
+**Status**: CODE_REVIEW  
 **Priority**: MEDIUM  
 **Created**: 2026-03-30T15:44:37Z  
 
