@@ -5,8 +5,13 @@ __pycache__/
 venv/
 env/
 .venv/
+.env
 .env.local
 .env.production.local
+
+# Agent data
+*.db
+config.yaml
 
 # Build outputs
 dist/
